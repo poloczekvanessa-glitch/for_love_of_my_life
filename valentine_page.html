@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Valentines ❤️</title>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Happy Valentines Day 💖</h1>
+    <div class="heart">❤️</div>
+    <p>For the most important person in World...</p>
+
+    <button onclick="showLove()">Click there 💌</button>
+
+    <div id="loveMessage" class="message">
+    I love you more every day 💕<br>
+    Thank you that you are there for me 🥰
+    </div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("loveMessage").classList.add("show");
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.innerHTML = "💗";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 8000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
